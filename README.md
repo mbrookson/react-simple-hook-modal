@@ -2,9 +2,9 @@
 
 Need a simple modal that just works? `react-simple-hook-modal` is just that!
 
-![Publish CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/Publish%20CI/badge.svg?branch=master) ![CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg)
+![Publish CI][publish] ![CI][ci] [![npm latest][npmBadge]][npmLink]
 
-![react-simple-hook-modal](https://github.com/mbrookson/react-simple-hook-modal/blob/master/logo.png)
+![react-simple-hook-modal][logo]
 
 # Installation
 
@@ -57,10 +57,20 @@ See the `example` directory in the repository for a full example including multi
 
 # Demo
 
-[Click here](https://react-simple-hook-modal.now.sh/) to see a live demo of `react-simple-hook-modal` in action!
+[Click here][demo] to see a live demo of `react-simple-hook-modal` in action!
 
 # Issues
 
 If you have any issues, please create an issue here on GitHub.
 
 ### Thanks!
+
+[publish]: https://github.com/mbrookson/react-simple-hook-modal/workflows/Publish%20CI/badge.svg?branch=master
+[ci]: https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg
+
+[npmBadge]: https://img.shields.io/npm/v/react-simple-hook-modal.svg?style=flat-square
+[npmLink]: https://npmjs.org/package/react-simple-hook-modal
+
+[logo]: https://raw.githubusercontent.com/mbrookson/react-simple-hook-modal/master/logo.png
+
+[demo]: https://react-simple-hook-modal.now.sh/
