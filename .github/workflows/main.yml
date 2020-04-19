@@ -1,0 +1,31 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Begin CI...
+        uses: actions/checkout@v2
+
+      - name: Use Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install peer dependencies
+        run: npm run install-peers
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test --ci --coverage --maxWorkers=2
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build

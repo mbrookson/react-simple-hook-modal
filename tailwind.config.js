@@ -1,0 +1,23 @@
+module.exports = {
+  prefix: 'rsm-',
+  corePlugins: [
+    'alignItems',
+    'boxShadow',
+    'borderRadius',
+    'backgroundColor',
+    'display',
+    'flex',
+    'inset',
+    'justifyContent',
+    'margin',
+    'opacity',
+    'overflow',
+    'padding',
+    'position',
+    'preflight',
+    'textAlign',
+    'textColor',
+    'width',
+    'zIndex',
+  ],
+};
