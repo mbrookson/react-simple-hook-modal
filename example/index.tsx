@@ -2,7 +2,7 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ModalProvider, Modal, useModal } from '../dist/index';
-import '../dist/react-simple-hook-modal.cjs.development.css';
+import '../dist/styles.css';
 
 const ModalContent = ({ onCloseClicked }) => {
   const { isModalOpen, openModal, closeModal } = useModal();
