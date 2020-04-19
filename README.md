@@ -4,7 +4,7 @@ Need a simple modal that just works? `react-simple-hook-modal` is just that!
 
 ![Publish CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/Publish%20CI/badge.svg?branch=master) ![CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg)
 
-![react-simple-hook-modal](https://github.com/mbrookson/react-simple-hook-modal/logo.png)
+![react-simple-hook-modal](https://github.com/mbrookson/react-simple-hook-modal/blob/master/logo.png)
 
 # Installation
 
