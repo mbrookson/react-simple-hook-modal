@@ -7,6 +7,7 @@ module.exports = {
     'backgroundColor',
     'display',
     'flex',
+    'flexDirection',
     'inset',
     'justifyContent',
     'margin',
