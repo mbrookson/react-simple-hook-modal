@@ -1,10 +1,10 @@
 # react-simple-hook-modal
 
-![Publish CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/Publish%20CI/badge.svg?branch=master) ![CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg)
-
 Need a simple modal that just works? `react-simple-hook-modal` is just that!
 
-![react-simple-hook-modal](/logo.png)
+![Publish CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/Publish%20CI/badge.svg?branch=master) ![CI](https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg)
+
+![react-simple-hook-modal](https://github.com/mbrookson/react-simple-hook-modal/logo.png)
 
 # Installation
 
