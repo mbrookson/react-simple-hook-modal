@@ -19,6 +19,7 @@ yarn add react-simple
 ```
 
 # Usage
+## React
 
 `react-simple-hook-modal` has a super simple API and utilises React hooks.
 
@@ -51,6 +52,14 @@ const App = () => (
 
 ```
 
+## Styles
+`react-simple-hook-modal` uses a subset of [tailwindcss][tailwind] under the hood. The tailwind classes used have a prefix of `rsm` added to avoid potential conflicts with your own styles. You can import the default styles using:
+```
+import 'react-simple-hook-modal/styles.css';
+```
+`ModalProvider` also takes an optional `backdropClassName` which can contain one or more classes to append and override the default styles (e.g. Changing the backdrop colour can be done by adding the class `bg-blue-800`).
+
+
 # Example
 
 See the `example` directory in the repository for a full example including multiple stacked modals.
@@ -74,3 +83,5 @@ If you have any issues, please create an issue here on GitHub.
 [logo]: https://raw.githubusercontent.com/mbrookson/react-simple-hook-modal/master/logo.png
 
 [demo]: https://react-simple-hook-modal.now.sh/
+
+[tailwind]: https://tailwindcss.com/
