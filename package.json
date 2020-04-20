@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "name": "react-simple-hook-modal",
   "description": "A simple React modal with hook based API",
