@@ -2,6 +2,12 @@
   "version": "0.1.2",
   "license": "MIT",
   "name": "react-simple-hook-modal",
+  "description": "A simple React modal with hook based API",
+  "homepage": "https://github.com/mbrookson/react-simple-hook-modal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbrookson/react-simple-hook-modal.git"
+  },
   "author": "Matthew Brookson",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
