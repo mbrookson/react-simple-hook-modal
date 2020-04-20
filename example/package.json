@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "npm run build:css && parcel index.html",
+    "build": "npm run build:css && parcel build index.html",
+    "build:css": "postcss tailwind.css -o styles.css"
   },
   "dependencies": {
     "react-app-polyfill": "^1.0.0"
@@ -16,9 +17,14 @@
     "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.2",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.8.4",
+    "autoprefixer": "^9.7.6",
+    "cssnano": "^4.1.10",
     "parcel": "^1.12.3",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0",
     "typescript": "^3.4.5"
   }
 }
