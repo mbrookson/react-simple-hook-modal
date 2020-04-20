@@ -2,7 +2,7 @@
 
 Need a simple modal that just works? `react-simple-hook-modal` is just that!
 
-![Publish CI][publish] ![CI][ci] [![npm latest][npmbadge]][npmlink]
+![build][ci] [![npm latest][npmbadge]][npmlink]
 
 ![react-simple-hook-modal][logo]
 
@@ -84,8 +84,8 @@ If you have any issues, please create an issue here on GitHub.
 ### Thanks!
 
 [publish]: https://github.com/mbrookson/react-simple-hook-modal/workflows/Publish%20CI/badge.svg?branch=master
-[ci]: https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg
-[npmbadge]: https://img.shields.io/npm/v/react-simple-hook-modal.svg?style=flat-square
+[ci]: https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg?branch=master
+[npmbadge]: https://img.shields.io/npm/v/react-simple-hook-modal.svg
 [npmlink]: https://npmjs.org/package/react-simple-hook-modal
 [logo]: https://raw.githubusercontent.com/mbrookson/react-simple-hook-modal/master/logo.png
 [demo]: https://react-simple-hook-modal.now.sh/
