@@ -1,33 +1,24 @@
 const { colors } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  prefix: 'rsm-',
   corePlugins: [
-    'alignItems',
     'boxShadow',
     'borderRadius',
     'backgroundColor',
     'display',
-    'flex',
-    'flexDirection',
-    'inset',
-    'justifyContent',
+    'fontSize',
     'margin',
-    'maxHeight',
-    'opacity',
-    'overflow',
     'padding',
-    'position',
     'preflight',
     'textAlign',
     'textColor',
-    'width',
-    'zIndex',
+    'textDecoration',
   ],
   theme: {
     colors: {
       white: colors.white,
-      gray: colors.gray,
+      blue: colors.blue,
+      red: colors.red,
     },
   },
 };
