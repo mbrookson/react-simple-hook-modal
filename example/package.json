@@ -11,7 +11,7 @@
   "dependencies": {
     "components": "^0.1.0",
     "react-app-polyfill": "^1.0.0",
-    "react-icons": "^3.10.0"
+    "react-icons-kit": "^1.3.1"
   },
   "alias": {
     "react": "../node_modules/react",

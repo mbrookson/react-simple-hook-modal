@@ -3,7 +3,7 @@
   "license": "MIT",
   "name": "react-simple-hook-modal",
   "description": "A simple React modal with hook based API",
-  "homepage": "https://github.com/mbrookson/react-simple-hook-modal",
+  "homepage": "https://react-simple-hook-modal.now.sh",
   "repository": {
     "type": "git",
     "url": "https://github.com/mbrookson/react-simple-hook-modal.git"
@@ -21,6 +21,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
+    "build:all": "tsdx build && cd example && npm install && npm run build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "install-peers": "install-peers -f"

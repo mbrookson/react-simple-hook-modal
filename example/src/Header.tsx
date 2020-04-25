@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { FaGithub } from 'react-icons/fa';
+import { Icon } from 'react-icons-kit';
+import { github } from 'react-icons-kit/fa/github';
 // @ts-ignore
 import images from '../*.png';
 
@@ -11,7 +12,7 @@ export const Header = () => {
           <div className="lg:pr-16">
             <h1 className="mb-4 text-5xl font-bold">React Simple Hook Modal</h1>
             <div className="flex flex-row items-center justify-center lg:justify-end pb-8">
-              <FaGithub className="inline" />
+              <Icon icon={github} className="inline" />
               <a
                 className="ml-2 hover:text-blue-300 transition transition-colors duration-200"
                 href="https://github.com/mbrookson/react-simple-hook-modal"
