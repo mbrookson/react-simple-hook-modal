@@ -91,13 +91,13 @@ const Component = ({ transition }) => {
 };
 
 const App = () => {
-  const [transition, setTransition] = React.useState(ModalTransition.NONE);
+  const [transition, setTransition] = React.useState(ModalTransition.SCALE);
 
   return (
     <ModalProvider>
       <div className="p-8">
         <Component transition={transition} />
-        <TransitionSelect onChange={setTransition} />
+        <TransitionSelect value={transition} onChange={setTransition} />
       </div>
     </ModalProvider>
   );

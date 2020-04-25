@@ -2,21 +2,23 @@ import * as React from 'react';
 import { ModalTransition } from '../../dist';
 
 interface Props {
+  value: ModalTransition;
   onChange(transition: ModalTransition);
 }
-export const TransitionSelect: React.FC<Props> = ({ onChange }) => (
+export const TransitionSelect: React.FC<Props> = ({ value, onChange }) => (
   <div className="w-full md:w-1/4 mb-6 md:mb-0 mt-8">
     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
       Transition
     </label>
     <div className="relative">
       <select
-        className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        value={value}
+        className="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         onChange={e => onChange(e.target.value as ModalTransition)}
       >
-        {Object.keys(ModalTransition).map(value => (
-          <option key={value} value={value}>
-            {value}
+        {Object.keys(ModalTransition).map(option => (
+          <option key={option} value={option}>
+            {option}
           </option>
         ))}
       </select>
