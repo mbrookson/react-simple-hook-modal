@@ -29,9 +29,11 @@ yarn add react-simple-hook-modal
   - This will not render anything to the DOM here
   - Modals are rendered after allthe children in side `<ModalProvider/>`
 - Use the `useModal` hook to control your modal's state
+- Use the `ModalTransition` enum to optionally set the transition animation
+  - Currently there are 3 to select from, or choose NONE to disable the transitions
 
 ```
-import { ModalProvider, Modal, useModal } from 'react-simple-hook-modal';
+import { ModalProvider, Modal, useModal, ModalTransition } from 'react-simple-hook-modal';
 
 const MyComponent = () => {
   const { isModalOpen, openModal, closeModal } = useModal();
@@ -46,6 +48,7 @@ const MyComponent = () => {
           <button onClick={openModal}>Open</button>
         )}
         isOpen={isModalOpen}
+        transition={ModalTransition.BOTTOM_UP}
       />
     </>
   );
