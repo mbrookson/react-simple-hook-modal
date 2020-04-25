@@ -9,6 +9,7 @@
     "build:css": "postcss tailwind.css -o styles.css"
   },
   "dependencies": {
+    "components": "^0.1.0",
     "react-app-polyfill": "^1.0.0"
   },
   "alias": {

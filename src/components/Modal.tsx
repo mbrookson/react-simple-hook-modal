@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useModalContext } from '../hooks/useModalContext';
+import { ModalTransition } from 'hooks/useModalTransition';
 
 export interface ModalProps {
   id: string;
@@ -7,6 +8,7 @@ export interface ModalProps {
   onBackdropClick?: () => void;
   content: React.ReactNode;
   footer?: React.ReactNode;
+  transition?: ModalTransition;
 }
 
 export const Modal: React.FC<ModalProps> = ({
@@ -15,20 +17,30 @@ export const Modal: React.FC<ModalProps> = ({
   onBackdropClick,
   content,
   footer,
+  transition,
 }) => {
   const { addOrUpdate, remove } = useModalContext();
 
   useEffect(() => {
-    isOpen
-      ? addOrUpdate({
-          id,
-          isOpen,
-          onBackdropClick,
-          content,
-          footer,
-        })
-      : remove(id);
-  }, [id, isOpen, onBackdropClick, content, footer, addOrUpdate, remove]);
+    addOrUpdate({
+      id,
+      isOpen,
+      onBackdropClick,
+      content,
+      footer,
+      transition,
+    });
+    return () => remove(id);
+  }, [
+    id,
+    isOpen,
+    onBackdropClick,
+    content,
+    footer,
+    addOrUpdate,
+    remove,
+    transition,
+  ]);
 
   return null;
 };

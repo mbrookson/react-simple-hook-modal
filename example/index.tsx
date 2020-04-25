@@ -1,11 +1,12 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ModalProvider, Modal, useModal } from '../dist/index';
+import { ModalProvider, Modal, useModal, ModalTransition } from '../dist/index';
 import '../dist/styles.css';
 import './styles.css';
+import { TransitionSelect } from './components/TransitionSelect';
 
-const ModalContent = ({ onCloseClicked }) => {
+const ModalContent = ({ transition, onCloseClicked }) => {
   const { isModalOpen, openModal, closeModal } = useModal();
   const [toggle, setToggle] = React.useState(false);
 
@@ -23,6 +24,7 @@ const ModalContent = ({ onCloseClicked }) => {
         content={<p>This modal can be closed by clicking the backdrop.</p>}
         isOpen={isModalOpen}
         onBackdropClick={closeModal}
+        transition={transition}
       />
       <div className="mt-8">
         Open another modal which will appear stacked on top of the current
@@ -56,15 +58,17 @@ const ModalContent = ({ onCloseClicked }) => {
   );
 };
 
-const Component = () => {
+const Component = ({ transition }) => {
   const { isModalOpen, openModal, closeModal } = useModal();
 
   return (
-    <div className="p-8">
+    <div>
       <h1 className="mb-4 text-2xl">React Simple Modal Example</h1>
       <a
         className="block mb-4 hover:text-blue-700"
         href="https://github.com/mbrookson/react-simple-hook-modal"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         https://github.com/mbrookson/react-simple-hook-modal
       </a>
@@ -76,17 +80,25 @@ const Component = () => {
       </button>
       <Modal
         id="1"
-        content={<ModalContent onCloseClicked={closeModal} />}
+        content={
+          <ModalContent transition={transition} onCloseClicked={closeModal} />
+        }
         isOpen={isModalOpen}
+        transition={transition}
       />
     </div>
   );
 };
 
 const App = () => {
+  const [transition, setTransition] = React.useState(ModalTransition.NONE);
+
   return (
     <ModalProvider>
-      <Component />
+      <div className="p-8">
+        <Component transition={transition} />
+        <TransitionSelect onChange={setTransition} />
+      </div>
     </ModalProvider>
   );
 };

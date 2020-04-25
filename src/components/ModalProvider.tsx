@@ -26,35 +26,32 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
     setModals(prev => prev.filter(modal => modal.id !== id));
   }, []);
 
+  const openModalCount = modals.filter(m => m.isOpen).length;
+  const modalOpen = openModalCount > 0;
+
   const getStaggerPixels = useCallback(
-    (index: number) => {
-      return (modals.length - index - 1) * 8;
-    },
+    (index: number) => openModalCount * 8 - (index + 1) * 8,
     [modals]
   );
-
-  const modalOpen = modals.some(m => m.isOpen);
 
   return (
     <ModalContext.Provider value={{ addOrUpdate, remove }}>
       {children}
       {!modalOpen ? null : (
-        <>
-          <div
-            className={
-              'rsm-fixed rsm-inset-0 rsm-opacity-50 rsm-z-40 rsm-bg-gray-700 ' +
-                backdropClassName || ''
-            }
-          />
-          {modals.map((modal, i) => (
-            <ModalContainer
-              key={modal.id}
-              transformDistance={getStaggerPixels(i)}
-              {...modal}
-            />
-          ))}
-        </>
+        <div
+          className={
+            'rsm-fixed rsm-inset-0 rsm-opacity-50 rsm-z-40 rsm-bg-gray-700 ' +
+              backdropClassName || ''
+          }
+        />
       )}
+      {modals.map((modal, i) => (
+        <ModalContainer
+          key={modal.id}
+          transformDistance={getStaggerPixels(i)}
+          {...modal}
+        />
+      ))}
     </ModalContext.Provider>
   );
 };

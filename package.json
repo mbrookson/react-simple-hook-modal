@@ -62,5 +62,8 @@
     "react-modal",
     "modal",
     "simple"
-  ]
+  ],
+  "dependencies": {
+    "react-spring": "^8.0.27"
+  }
 }
