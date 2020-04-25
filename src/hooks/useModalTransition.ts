@@ -14,22 +14,22 @@ const ModalTransitionConfig: { [key in ModalTransition]: object } = {
     leave: { transform: 'scale(1)' },
   },
   SCALE: {
-    from: { transform: 'scale(0)' },
-    enter: { transform: 'scale(1)' },
-    leave: { transform: 'scale(0)' },
-    config: { tension: 700, friction: 30 },
+    from: { transform: 'scale(0)', opacity: 0 },
+    enter: { transform: 'scale(1)', opacity: 1 },
+    leave: { transform: 'scale(0)', opacity: 0 },
+    config: { tension: 800, friction: 25 },
   },
   TOP_DOWN: {
     from: { transform: 'translateY(-150%)' },
     enter: { transform: 'translateY(0)' },
     leave: { transform: 'translateY(-150%)' },
-    config: { tension: 500, friction: 30 },
+    config: { tension: 500, friction: 25 },
   },
   BOTTOM_UP: {
     from: { transform: 'translateY(150%)' },
     enter: { transform: 'translateY(0)' },
     leave: { transform: 'translateY(150%)' },
-    config: { tension: 500, friction: 30 },
+    config: { tension: 500, friction: 25 },
   },
 };
 
