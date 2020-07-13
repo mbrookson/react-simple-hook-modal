@@ -13,7 +13,7 @@ export interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = modal => {
-  const container = document.getElementById('modal-container');
+  const container = document.getElementById('react-simple-modal-container');
   const { addOrUpdate, remove, getStaggerPixels } = useModalContext();
   const { id, isOpen } = modal;
 
