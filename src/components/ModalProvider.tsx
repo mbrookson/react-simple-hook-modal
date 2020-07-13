@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { ModalContext } from '../ModalContext';
-import { ModalContainer } from './ModalContainer';
-import { ModalProps } from 'components/Modal';
 
 export interface ModalProviderProps {
   backdropClassName?: string;
@@ -11,31 +9,31 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
   children,
   backdropClassName,
 }) => {
-  const [modals, setModals] = useState<ModalProps[]>([]);
+  const [openModals, setOpenModals] = useState<string[]>([]);
 
-  const addOrUpdate = useCallback((modal: ModalProps) => {
-    setModals(prev => {
-      const exists = prev.some(m => m.id === modal.id);
-      return exists
-        ? prev.map(m => (m.id === modal.id ? modal : m))
-        : [...prev, modal];
+  const addOrUpdate = useCallback((_id: string) => {
+    setOpenModals(prev => {
+      const exists = prev.some(id => id === _id);
+      return exists ? prev : [...prev, _id];
     });
   }, []);
 
-  const remove = useCallback((id: string) => {
-    setModals(prev => prev.filter(modal => modal.id !== id));
+  const remove = useCallback((_id: string) => {
+    setOpenModals(prev => prev.filter(id => id !== _id));
   }, []);
 
-  const openModalCount = modals.filter(m => m.isOpen).length;
-  const modalOpen = openModalCount > 0;
+  const modalOpen = openModals.length > 0;
 
   const getStaggerPixels = useCallback(
-    (index: number) => openModalCount * 8 - (index + 1) * 8,
-    [modals]
+    (_id: string) => {
+      const index = openModals.findIndex(id => id === _id);
+      return openModals.length * 8 - (index + 1) * 8;
+    },
+    [openModals]
   );
 
   return (
-    <ModalContext.Provider value={{ addOrUpdate, remove }}>
+    <ModalContext.Provider value={{ addOrUpdate, remove, getStaggerPixels }}>
       {children}
       {!modalOpen ? null : (
         <div
@@ -45,13 +43,7 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({
           }
         />
       )}
-      {modals.map((modal, i) => (
-        <ModalContainer
-          key={modal.id}
-          transformDistance={getStaggerPixels(i)}
-          {...modal}
-        />
-      ))}
+      <div id="react-simple-modal-container" />
     </ModalContext.Provider>
   );
 };

@@ -11,8 +11,8 @@ interface Props {
 }
 
 export const ModalContainer: React.FC<ModalProps & Props> = ({
+  children,
   isOpen,
-  content,
   footer,
   transition,
   onBackdropClick,
@@ -44,7 +44,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
                 }}
                 onClick={e => e.stopPropagation()}
               >
-                <div className="rsm-flex-1 rsm-p-8">{content}</div>
+                <div className="rsm-flex-1 rsm-p-8">{children}</div>
                 {!footer ? null : (
                   <div className="rsm-bg-gray-200 rsm-p-4">{footer}</div>
                 )}

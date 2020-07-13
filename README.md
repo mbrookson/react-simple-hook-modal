@@ -30,10 +30,15 @@ yarn add react-simple-hook-modal
   - Modals are rendered after allthe children in side `<ModalProvider/>`
 - Use the `useModal` hook to control your modal's state
 - Use the `ModalTransition` enum to optionally set the transition animation
-  - Currently there are 3 to select from, or choose NONE to disable the transitions
+  - Currently there are 3 to select from, or choose `NONE` to disable the transitions
 
-```
-import { ModalProvider, Modal, useModal, ModalTransition } from 'react-simple-hook-modal';
+```tsx
+import {
+  ModalProvider,
+  Modal,
+  useModal,
+  ModalTransition,
+} from 'react-simple-hook-modal';
 
 const MyComponent = () => {
   const { isModalOpen, openModal, closeModal } = useModal();
@@ -43,34 +48,33 @@ const MyComponent = () => {
       <button onClick={openModal}>Open</button>
       <Modal
         id="any-unique-identifier"
-        content={(
-          // Any React node can be used as content
-          <button onClick={openModal}>Open</button>
-        )}
         isOpen={isModalOpen}
         transition={ModalTransition.BOTTOM_UP}
-      />
+      >
+        <button onClick={openModal}>Open</button>
+      </Modal>
     </>
   );
-}
+};
 
 const App = () => (
   <ModalProvider>
     <MyComponent />
   </ModalProvider>
-)
-
+);
 ```
 
 ## Styles
 
 `react-simple-hook-modal` uses a subset of [tailwindcss][tailwind] under the hood. The tailwind classes used have a prefix of `rsm` added to avoid potential conflicts with your own styles. You can import the default styles using:
 
-```
+```css
 import 'react-simple-hook-modal/dist/styles.css';
 ```
 
-`ModalProvider` also takes an optional `backdropClassName` which can contain one or more classes to append and override the default styles (e.g. Changing the backdrop colour can be done by adding the class `bg-blue-800`).
+`ModalProvider` also takes optional props:
+
+- `backdropClassName` which can contain one or more classes to append and override the default styles (e.g. Changing the backdrop colour can be done by adding the class `bg-blue-800`).
 
 # Example
 
@@ -84,7 +88,7 @@ See the `example` directory in the repository for a full example including multi
 
 If you have any issues, please create an issue here on GitHub.
 
-### Thanks!
+### Thanks and enjoy!
 
 [publish]: https://github.com/mbrookson/react-simple-hook-modal/workflows/Publish%20CI/badge.svg?branch=master
 [ci]: https://github.com/mbrookson/react-simple-hook-modal/workflows/CI/badge.svg?branch=master
