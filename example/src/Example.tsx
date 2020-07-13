@@ -16,11 +16,12 @@ const ModalContent = ({ transition, onCloseClicked }) => {
       </button>
       <Modal
         id="2"
-        content={<p>This modal can be closed by clicking the backdrop.</p>}
         isOpen={isModalOpen}
         onBackdropClick={closeModal}
         transition={transition}
-      />
+      >
+        <p>This modal can be closed by clicking the backdrop.</p>
+      </Modal>
       <div className="mt-8">
         Open another modal which will appear stacked on top of the current
         modal.
@@ -67,14 +68,9 @@ export const Example = ({ transition }) => {
       >
         Open modal
       </button>
-      <Modal
-        id="1"
-        content={
-          <ModalContent transition={transition} onCloseClicked={closeModal} />
-        }
-        isOpen={isModalOpen}
-        transition={transition}
-      />
+      <Modal id="1" isOpen={isModalOpen} transition={transition}>
+        <ModalContent transition={transition} onCloseClicked={closeModal} />
+      </Modal>
     </div>
   );
 };

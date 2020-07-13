@@ -1,46 +1,31 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { useModalContext } from '../hooks/useModalContext';
-import { ModalTransition } from 'hooks/useModalTransition';
+import { ModalTransition } from '../hooks/useModalTransition';
+import { ModalContainer } from './ModalContainer';
 
 export interface ModalProps {
   id: string;
   isOpen: boolean;
   onBackdropClick?: () => void;
-  content: React.ReactNode;
   footer?: React.ReactNode;
   transition?: ModalTransition;
 }
 
-export const Modal: React.FC<ModalProps> = ({
-  id,
-  isOpen,
-  onBackdropClick,
-  content,
-  footer,
-  transition,
-}) => {
-  const { addOrUpdate, remove } = useModalContext();
+export const Modal: React.FC<ModalProps> = modal => {
+  const container = document.getElementById('modal-container');
+  const { addOrUpdate, remove, getStaggerPixels } = useModalContext();
+  const { id, isOpen } = modal;
 
   useEffect(() => {
-    addOrUpdate({
-      id,
-      isOpen,
-      onBackdropClick,
-      content,
-      footer,
-      transition,
-    });
+    isOpen ? addOrUpdate(id) : remove(id);
     return () => remove(id);
-  }, [
-    id,
-    isOpen,
-    onBackdropClick,
-    content,
-    footer,
-    addOrUpdate,
-    remove,
-    transition,
-  ]);
+  }, [id, isOpen]);
 
-  return null;
+  return container
+    ? ReactDOM.createPortal(
+        <ModalContainer transformDistance={getStaggerPixels(id)} {...modal} />,
+        container
+      )
+    : null;
 };
