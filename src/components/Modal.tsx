@@ -12,10 +12,21 @@ export interface ModalProps {
   transition?: ModalTransition;
 }
 
+function hasDOM() {
+  return !!(
+    typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement
+  );
+}
+
 export const Modal: React.FC<ModalProps> = modal => {
-  const container = document.getElementById('react-simple-modal-container');
   const { addOrUpdate, remove, getStaggerPixels } = useModalContext();
   const { id, isOpen } = modal;
+
+  const container = hasDOM()
+    ? document.getElementById('react-simple-modal-container')
+    : null;
 
   useEffect(() => {
     isOpen ? addOrUpdate(id) : remove(id);
