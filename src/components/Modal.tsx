@@ -10,6 +10,7 @@ export interface ModalProps {
   onBackdropClick?: () => void;
   footer?: React.ReactNode;
   transition?: ModalTransition;
+  modalClassName?: string;
 }
 
 function hasDOM() {
