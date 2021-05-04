@@ -51,7 +51,7 @@ const MyComponent = () => {
         isOpen={isModalOpen}
         transition={ModalTransition.BOTTOM_UP}
       >
-        <button onClick={openModal}>Open</button>
+        <button onClick={closeModal}>Close</button>
       </Modal>
     </>
   );
