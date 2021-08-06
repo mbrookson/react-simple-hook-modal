@@ -11,6 +11,7 @@ export interface ModalProps {
   footer?: React.ReactNode;
   transition?: ModalTransition;
   modalClassName?: string;
+  modalZIndex?: number;
 }
 
 function hasDOM() {
