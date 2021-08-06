@@ -77,7 +77,9 @@ import 'react-simple-hook-modal/dist/styles.css';
 - `backdropClassName` which can contain one or more classes to append and override the default styles (e.g. Changing the backdrop colour can be done by adding the class `bg-blue-800`).
 
 `Modal` also takes optional props:
+
 - `modalClassName` which can contain one or more classes to append to the default modal div.
+- `modalZIndex` this can be used to override the default z-index value should you need one higher than 999.
 
 # Example
 
