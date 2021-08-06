@@ -18,6 +18,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
   onBackdropClick,
   transformDistance,
   modalClassName,
+  modalZIndex,
 }) => {
   const modalTransitions = useModalTransition(transition, isOpen);
 
@@ -43,6 +44,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
                       : 'transform ease-in-out .2s',
                   transform: `translate(${transformDistance}px, ${transformDistance}px)`,
                   transformOrigin: 'center',
+                  zIndex: modalZIndex,
                 }}
                 onClick={e => e.stopPropagation()}
               >
