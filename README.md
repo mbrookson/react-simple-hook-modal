@@ -79,7 +79,7 @@ import 'react-simple-hook-modal/dist/styles.css';
 `Modal` also takes optional props:
 
 - `modalClassName` which can contain one or more classes to append to the default modal div.
-- `modalZIndex` this can be used to override the default z-index value should you need one higher than 999.
+- `modalZIndex` this can be used to override the default z-index value should you need one higher than 9999.
 
 # Example
 

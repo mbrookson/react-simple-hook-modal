@@ -30,8 +30,8 @@ module.exports = {
       gray: colors.gray,
     },
     zIndex: {
-      '40': 40,
-      '999': 999,
+      40: 40,
+      9999: 9999,
       auto: 'auto',
     },
   },
