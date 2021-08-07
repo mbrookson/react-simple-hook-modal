@@ -29,5 +29,10 @@ module.exports = {
       white: colors.white,
       gray: colors.gray,
     },
+    zIndex: {
+      40: 40,
+      9999: 9999,
+      auto: 'auto',
+    },
   },
 };

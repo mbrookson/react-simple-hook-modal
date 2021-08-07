@@ -18,6 +18,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
   onBackdropClick,
   transformDistance,
   modalClassName,
+  modalZIndex,
 }) => {
   const modalTransitions = useModalTransition(transition, isOpen);
 
@@ -33,7 +34,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
               onClick={onBackdropClick}
             >
               <div
-                className={`rsm-bg-white rsm-rounded-md rsm-overflow-auto rsm-max-h-full rsm-w-full md:rsm-w-10/12 xl:rsm-w-1/2 rsm-opactiy-100 rsm-shadow-lg rsm-z-50 rsm-border rsm-border-gray-200 rsm-flex rsm-flex-col ${modalClassName ??
+                className={`rsm-bg-white rsm-rounded-md rsm-overflow-auto rsm-max-h-full rsm-w-full md:rsm-w-10/12 xl:rsm-w-1/2 rsm-opactiy-100 rsm-shadow-lg rsm-z-9999 rsm-border rsm-border-gray-200 rsm-flex rsm-flex-col ${modalClassName ??
                   ''}`}
                 style={{
                   minHeight: '70%',
@@ -43,6 +44,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
                       : 'transform ease-in-out .2s',
                   transform: `translate(${transformDistance}px, ${transformDistance}px)`,
                   transformOrigin: 'center',
+                  zIndex: modalZIndex,
                 }}
                 onClick={e => e.stopPropagation()}
               >
