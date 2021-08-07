@@ -34,9 +34,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
               onClick={onBackdropClick}
             >
               <div
-                className={`rsm-bg-white rsm-rounded-md rsm-overflow-auto rsm-max-h-full rsm-w-full md:rsm-w-10/12 xl:rsm-w-1/2 rsm-opactiy-100 rsm-shadow-lg rsm-z-9999 rsm-border rsm-border-gray-200 rsm-flex rsm-flex-col ${
-                  modalClassName ?? ''
-                }`}
+                className={`rsm-bg-white rsm-rounded-md rsm-overflow-auto rsm-max-h-full rsm-w-full md:rsm-w-10/12 xl:rsm-w-1/2 rsm-opactiy-100 rsm-shadow-lg rsm-z-9999 rsm-border rsm-border-gray-200 rsm-flex rsm-flex-col ${modalClassName ?? ''}`}
                 style={{
                   minHeight: '70%',
                   transition:
@@ -47,7 +45,7 @@ export const ModalContainer: React.FC<ModalProps & Props> = ({
                   transformOrigin: 'center',
                   zIndex: modalZIndex,
                 }}
-                onClick={(e) => e.stopPropagation()}
+                onClick={e => e.stopPropagation()}
               >
                 <div className="rsm-flex-1 rsm-p-8">{children}</div>
                 {!footer ? null : (
